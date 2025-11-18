@@ -57,5 +57,10 @@
   </main>
 
   <script src="script.js"></script>
+   <script>
+  if (!localStorage.getItem('usuarioActivo')) {
+    window.location.href = 'login.html';
+  }
 </body>
 </html>  
+
