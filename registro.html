@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Polifit 💪</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Crear cuenta en Polifit 💪</h1>
+  </header>
+
+  <main>
+    <form id="form-registro">
+      <input type="text" id="nombre" placeholder="Nombre completo" required>
+      <input type="email" id="correo" placeholder="Correo electrónico" required>
+      <input type="number" id="edad" placeholder="Edad" required>
+      
+      <select id="sexo" required>
+        <option value="">Sexo</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+      </select>
+      
+      <input type="number" id="estatura" placeholder="Estatura (cm)" required>
+      <input type="number" id="peso" placeholder="Peso (kg)" required>
+      <input type="password" id="contraseña" placeholder="Contraseña" required>
+      
+      <button type="submit">Registrarme</button>
+      <p id="mensaje-registro" style="color:red; font-weight:bold;"></p>
+
+      <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
