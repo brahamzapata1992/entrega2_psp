@@ -5,43 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi Portal Polifit</title>
   <link rel="stylesheet" href="style.css">
+
   <script>
-  window.location.href = "login.html";
-</script>
+    // Si no hay sesión → regresar al login
+    if (!localStorage.getItem("usuarioActivo")) {
+      window.location.href = "login.html";
+    }
+  </script>
 </head>
+
 <body>
   <header>
     <h1>Mi Portal Polifit</h1>
     <p>Registra tu rutina y consumo de calorías 💪</p>
+
+    <button onclick="cerrarSesion()" class="logout-btn">Cerrar sesión</button>
   </header>
 
   <main>
- <section id="ejercicios">
-  <h2>Rutina de Ejercicio</h2>
+    <section id="ejercicios">
+      <h2>Rutina de Ejercicio</h2>
 
-  <form id="form-ejercicio">
-    <select id="tipoEjercicio" required>
-      <option value="">Selecciona la actividad</option>
-      <option value="correr">Correr (Cardio)</option>
-      <option value="caminar">Caminar</option>
-      <option value="pesas">Pesas</option>
-      <option value="hiit">HIIT</option>
-      <option value="ciclismo">Ciclismo</option>
-      <option value="natacion">Natación</option>
-      <option value="yoga">Yoga</option>
-    </select>
+      <form id="form-ejercicio">
+        <select id="tipoEjercicio" required>
+          <option value="">Selecciona la actividad</option>
+          <option value="correr">Correr (Cardio)</option>
+          <option value="caminar">Caminar</option>
+          <option value="pesas">Pesas</option>
+          <option value="hiit">HIIT</option>
+          <option value="ciclismo">Ciclismo</option>
+          <option value="natacion">Natación</option>
+          <option value="yoga">Yoga</option>
+        </select>
 
-    <input type="number" id="minutosEjercicio" placeholder="Minutos" required>
+        <input type="number" id="minutosEjercicio" placeholder="Minutos" required>
 
-    <button type="submit">Agregar</button>
-  </form>
+        <button type="submit">Agregar</button>
+      </form>
 
-  <ul id="listaEjercicios"></ul>
-</section>
+      <ul id="listaEjercicios"></ul>
+    </section>
 
-    <!-- Sección de calorías -->
     <section id="calorias">
       <h2>Consumo de Calorías</h2>
+
       <form id="form-calorias">
         <input type="text" id="nombreComida" placeholder="Ej: Almuerzo, Snack..." required>
         <input type="number" id="caloriasComida" placeholder="Calorías" required>
@@ -50,19 +57,19 @@
       <ul id="listaCalorias"></ul>
     </section>
 
-    <!-- Resumen del día -->
     <section id="resumen">
       <h2>Resumen Diario</h2>
       <p><strong>Total minutos de ejercicio:</strong> <span id="totalMinutos">0</span></p>
       <p><strong>Total calorías consumidas:</strong> <span id="totalCalorias">0</span></p>
-      <p><strong>Total calorías quemadas:</strong><span id="totalCaloriasQuemadas">0</span></p>
+      <p><strong>Total calorías quemadas:</strong> <span id="totalCaloriasQuemadas">0</span></p>
     </section>
   </main>
 
   <script src="script.js"></script>
-   
 </body>
-</html>  
+</html>
+
+
 
 
 
